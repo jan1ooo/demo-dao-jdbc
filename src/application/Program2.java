@@ -14,22 +14,25 @@ public class Program2 {
 		Scanner sc = new Scanner(System.in);
 		DepartmentDao departmentDao = DaoFactory.createDepartmentDao();
 		
-		System.out.println("=== TEST 1: seller findById ===");
+		System.out.println("=== TEST 1: department findById ===");
 		Department department = departmentDao.findById(2);
 		System.out.println(department);
 		
-		System.out.println("\n=== TEST 3: seller findAll ===");
+		System.out.println("\n=== TEST 2: department findAll ===");
 		List<Department> list = new ArrayList<>();
 		list = departmentDao.findAll();
 		for(Department d : list) {
 			System.out.println(d);
 		}
 		
-		System.out.println("\n=== TEST 4: seller insert ===");
+		System.out.println("\n=== TEST 3: department insert ===");
+		Department dep = new Department(null, "Limpeza");
+		departmentDao.insert(dep);
+		System.out.println(dep);
 		
-		System.out.println("\n=== TEST 5: seller update ===");
+		System.out.println("\n=== TEST 5: department update ===");
 		
-		System.out.println("\n=== TEST 6: seller deleteById ===");
+		System.out.println("\n=== TEST 6: department deleteById ===");
 		
 		sc.close();
 	}
